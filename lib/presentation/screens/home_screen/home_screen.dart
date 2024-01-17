@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotify/presentation/screen_transitions/rightToLeft.dart';
+import 'package:spotify/presentation/screen_transitions/right_to_left.dart';
 import 'package:spotify/presentation/screens/home_screen/widget/hedding.dart';
 import 'package:spotify/presentation/screens/home_screen/widget/play_cover.dart';
 import 'package:spotify/presentation/screens/home_screen/widget/recently_played.dart';
@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           // Show a loading indicator while waiting for the data
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         } else if (snapshot.hasError) {
           // Show an error message if there's an error
           return Text('Error: ${snapshot.error}');
@@ -31,8 +31,8 @@ class HomeScreen extends StatelessWidget {
               decoration: CustomTheme().getTheme(),
               child: ListView(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 25, 20, 0),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(20, 25, 20, 0),
                     child: RecentlyPlayed(),
                   ),
                   Padding(
@@ -45,13 +45,13 @@ class HomeScreen extends StatelessWidget {
                             Navigator.of(context)
                                 .push(rightToLeft(const PlayListScreen()));
                           },
-                          child: CoverPhoto(
+                          child: const CoverPhoto(
                             url:
                                 'https://c.ndtvimg.com/2022-06/j2h2qtro_ar-rahman_625x300_11_June_22.jpg',
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 8),
                           child: Text(
                             'Daily Mix 1',
                             style: TextStyle(fontSize: 15),
@@ -60,8 +60,8 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(20, 25, 20, 25),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [Heading(title: 'Made for you')],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:spotify/presentation/screen_transitions/bottom_to_top.dart';
 import 'package:spotify/presentation/screens/home_screen/widget/play_cover.dart';
+import 'package:spotify/presentation/screens/music_play_screen/music_play_screen.dart';
 import 'package:spotify/presentation/screens/widget/theme.dart';
 
 
@@ -15,7 +17,7 @@ class PlayListScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back))),
+            icon: Icon(Icons.arrow_back_rounded))),
         actions: const [
           Icon(Icons.favorite_border_outlined),
           SizedBox(
@@ -71,10 +73,16 @@ class PlayListScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: ListView.builder(itemCount: 10, itemBuilder: (context, index){
-                    return ListTile(
-                      title: Text('Sugith'),
-                      subtitle: Text('Hello Sugith.............'),
-                      trailing: IconButton(onPressed: (){}, icon: Icon(Icons.more_vert_rounded)),
+                    return InkWell(
+                      borderRadius: BorderRadius.circular(20),
+                      onTap: (){
+                        Navigator.of(context).push(bottomToTop(const MusicPlayerScreen()));
+                      },
+                      child: ListTile(
+                        title: const Text('Sugith'),
+                        subtitle: const Text('Hello Sugith.............'),
+                        trailing: IconButton(onPressed: (){}, icon: const Icon(Icons.more_vert_rounded)),
+                      ),
                     );
                   }),
                 )
