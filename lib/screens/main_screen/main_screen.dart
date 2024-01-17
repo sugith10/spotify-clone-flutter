@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify/screens/main_screen/widget/widget_list.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -13,14 +14,14 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
       body: PopScope(
         canPop: false,
-        child: Container(),
+        child: WidgetList().mainScreens[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(255, 34, 121, 51),
+        elevation: 0,
         currentIndex: _currentIndex,
         onTap: (value) {
           setState(() {
@@ -33,12 +34,12 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+            icon: Icon( Icons.search),
             label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border),
-            label: 'Your Libary',
+            label: 'Favourites',
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.music_note), label: 'Premium')

@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:Spotify/screens/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:spotify/screens/main_screen/main_screen.dart';
 
 
 class Splash extends StatelessWidget {
