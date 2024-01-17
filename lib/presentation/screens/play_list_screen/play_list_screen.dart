@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:spotify/screens/home_screen/widget/play_cover.dart';
-import 'package:spotify/screens/widget/theme.dart';
+import 'package:spotify/presentation/screens/home_screen/widget/play_cover.dart';
+import 'package:spotify/presentation/screens/widget/theme.dart';
+
 
 class PlayListScreen extends StatelessWidget {
   const PlayListScreen({super.key});

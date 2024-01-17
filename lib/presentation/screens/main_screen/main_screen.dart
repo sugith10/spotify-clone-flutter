@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spotify/screens/main_screen/widget/widget_list.dart';
+import 'package:spotify/presentation/screens/main_screen/widget/widget_list.dart';
+
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

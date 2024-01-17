@@ -35,7 +35,7 @@ class ApiCall {
     }
   }
 
-  Future<void> getArtistTopTrack() async {
+  Future<List<dynamic>> getArtistTopTrack() async {
     const method = 'artist.gettoptracks';
     const limit = '10';
     const artist = 'A.R.+Rahman';
@@ -52,9 +52,11 @@ class ApiCall {
         final body = response.body;
         final json = jsonDecode(body);
         final results = json['toptracks']['track'] as List<dynamic>;
+        return results;
       }
     } catch (e) {
       log('error: $e');
     }
+    return [];
   }
 }

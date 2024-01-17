@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotify/screens/home_screen/widget/hedding.dart';
+import 'package:spotify/presentation/screens/home_screen/widget/hedding.dart';
 
 class RecentlyPlayed extends StatelessWidget {
   const RecentlyPlayed({super.key});

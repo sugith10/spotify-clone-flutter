@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotify/screens/splash_screen/splash.dart';
+import 'package:spotify/presentation/screens/splash_screen/splash.dart';
 
 main() => runApp(const MyApp());
 
